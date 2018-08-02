@@ -1,0 +1,33 @@
+{
+  "name": "hexagon",
+  "version": "0.0.1",
+  "description": "generate simple architecture hexagonal",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "bin": {
+    "hexagon": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuansu0897/hexagon.git"
+  },
+  "keywords": [
+    "generatos",
+    "hexagonal",
+    "hexagon",
+    "hexa",
+    "architecture"
+  ],
+  "author": "joshua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuansu0897/hexagon/issues"
+  },
+  "homepage": "https://github.com/joshuansu0897/hexagon#readme",
+  "dependencies": {
+    "chalk-pipe": "^1.2.0",
+    "inquirer": "^6.0.0"
+  }
+}
