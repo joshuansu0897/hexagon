@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/joshuansu0897/hexagon#readme",
   "dependencies": {
-    "chalk-pipe": "^1.2.0",
     "inquirer": "^6.0.0"
   }
 }
