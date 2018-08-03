@@ -10,10 +10,7 @@ const PROV = fs.readdirSync(PATH)
 let ProjectName
 exports.provider = async (projectName) => {
   ProjectName = projectName
-  for (let i = 0; i < PROV.length; i++) {
-    const pro = PROV[i];
-    await askSelect(fs.readdirSync(`${PATH}/${pro}`), pro, `${PATH}/${pro}`)
-  }
+  await askSelect(fs.readdirSync(PATH), 'hexagono', PATH)
 }
 
 const askSelect = async (arr, kind, dir) => {
@@ -28,19 +25,15 @@ const askSelect = async (arr, kind, dir) => {
 
   let answers = await inquirer.prompt(QUESTIONS)
 
-  try {
-    for (let i = 0; i < answers[kind].length; i++) {
-      const element = answers[kind][i];
+  for (let i = 0; i < answers[kind].length; i++) {
+    const element = answers[kind][i];
 
-      if (utils.isFile(`${dir}/${element}`)) {
-        utils.createFile(`${dir}/${element}`, `${ProjectName}${dir.replace(PATH, '')}/${element}`)
-      } else {
-        await askSelect(fs.readdirSync(`${dir}/${element}`), element, `${dir}/${element}`)
-      }
-
+    if (utils.isFile(`${dir}/${element}`)) {
+      utils.createFile(`${dir}/${element}`, `${ProjectName}${dir.replace(PATH, '')}/${element}`)
+    } else {
+      await askSelect(fs.readdirSync(`${dir}/${element}`), element, `${dir}/${element}`)
     }
-  } catch (e) {
-    console.log(e)
+
   }
 
 }
