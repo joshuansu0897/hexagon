@@ -5,7 +5,6 @@ const inquirer = require('inquirer')
 const utils = require(`${__dirname}/../utils`)
 
 const PATH = `${__dirname}/../../prov/hexagono`
-const PROV = fs.readdirSync(PATH)
 
 let ProjectName
 exports.provider = async (projectName) => {
