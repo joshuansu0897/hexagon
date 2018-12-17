@@ -2,14 +2,15 @@
 const fs = require('fs')
 const inquirer = require('inquirer')
 
-const utils = require(`${__dirname}/../utils`)
+const utils = require(`${__dirname}/utils`)
 
-const PATH = `${__dirname}/../../prov/hexagono`
-
+let PATH
 let ProjectName
-exports.provider = async (projectName) => {
+exports.provider = async (projectName, projectChoice) => {
   ProjectName = projectName
-  await askSelect(fs.readdirSync(PATH), 'hexagono', PATH)
+  PATH = `${__dirname}/../provider/${projectChoice}`
+  
+  await askSelect(fs.readdirSync(PATH), projectChoice, PATH)
 }
 
 const askSelect = async (arr, kind, dir) => {

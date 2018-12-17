@@ -33,5 +33,5 @@ inquirer.prompt(QUESTIONS)
 
     utils.create(templatePath, projectName)
 
-    require(`${__dirname}/src/${projectChoice}`).provider(projectName)
+    require(`${__dirname}/src`).provider(projectName, projectChoice)
   })
